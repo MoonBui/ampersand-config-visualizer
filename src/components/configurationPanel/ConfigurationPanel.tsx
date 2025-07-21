@@ -1,11 +1,6 @@
 import React from 'react';
 import { YAMLEditor, ParseStatus } from './YamlComponent';
-
-interface ConfigurationPanelProps {
-  yamlConfig: string;
-  setYamlConfig: (config: string) => void;
-  parsedConfig: any;
-}
+import { ConfigurationPanelProps } from '../../types';
 
 const ConfigurationPanel: React.FC<ConfigurationPanelProps> = ({ yamlConfig, setYamlConfig, parsedConfig }) => {
   const copyToClipboard = () => {

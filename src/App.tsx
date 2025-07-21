@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import ConfigurationPanel from './components/ConfigurationPanel';
-import VisualizationPanel from './components/VisualizationPanel';
-import { yamlParser } from './components/YamlComponent';
+import ConfigurationPanel from './components/configurationPanel/ConfigurationPanel';
+import VisualizationPanel from './components/visualizationPanel/VisualizationPanel';
+import { yamlParser } from './components/configurationPanel/YamlComponent';
+import { ParsedConfig } from './types';
 import './App.css';
-
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface ParsedConfig {
-  integrations: Integration[];
-}
 
 function App() {
   const [yamlConfig, setYamlConfig] = useState(`specVersion: 1.0.0

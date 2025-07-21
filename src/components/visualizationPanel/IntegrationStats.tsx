@@ -1,26 +1,6 @@
 import React from 'react';
-import { integrationUtils } from './YamlComponent';
-
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface IntegrationStatsProps {
-  integration: Integration | null;
-}
-
-interface StatCardProps {
-  icon: React.ReactNode;
-  title: string;
-  value: number;
-  bgColor: string;
-  textColor: string;
-  titleColor: string;
-}
+import { integrationUtils } from '../configurationPanel/YamlComponent';
+import { IntegrationStatsProps, StatCardProps } from '../../types';
 
 const StatCard: React.FC<StatCardProps> = ({ icon, title, value, bgColor, textColor, titleColor }) => {
   return (

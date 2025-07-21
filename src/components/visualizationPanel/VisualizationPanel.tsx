@@ -1,28 +1,9 @@
 import React from 'react';
 import IntegrationTabs from './IntegrationTabs';
 import IntegrationStats from './IntegrationStats';
-import FlowDiagram from './FlowDiagram';
 import FieldMappingView from './FieldMappingView';
-
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface ParsedConfig {
-  integrations: Integration[];
-}
-
-interface VisualizationPanelProps {
-  parsedConfig: ParsedConfig | null;
-  selectedIntegration: number;
-  setSelectedIntegration: (index: number) => void;
-  showFieldMapping: boolean;
-  setShowFieldMapping: (show: boolean) => void;
-}
+import FlowDiagram from './FlowDiagram';
+import { VisualizationPanelProps } from '../../types';
 
 const VisualizationPanel: React.FC<VisualizationPanelProps> = ({ 
   parsedConfig, 

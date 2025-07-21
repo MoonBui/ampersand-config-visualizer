@@ -1,18 +1,5 @@
 import React from 'react';
-
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface IntegrationTabsProps {
-  integrations: Integration[];
-  selectedIndex: number;
-  onSelect: (index: number) => void;
-}
+import { IntegrationTabsProps } from '../../types';
 
 const IntegrationTabs: React.FC<IntegrationTabsProps> = ({ integrations, selectedIndex, onSelect }) => {
   if (integrations.length <= 1) return null;

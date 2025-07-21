@@ -1,28 +1,5 @@
 import React from 'react';
-
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface FieldMappingViewProps {
-  integration: Integration | null;
-  showFieldMapping: boolean;
-}
-
-interface FieldMappingSectionProps {
-  title: string;
-  objects: any[];
-  type: 'source' | 'destination';
-}
-
-interface FieldMappingObjectProps {
-  object: any;
-  type: 'source' | 'destination';
-}
+import { FieldMappingViewProps, FieldMappingSectionProps, FieldMappingObjectProps } from '../../types';
 
 const FieldMappingObject: React.FC<FieldMappingObjectProps> = ({ object, type }) => {
   const fields = type === 'source' 

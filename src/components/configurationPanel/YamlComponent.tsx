@@ -1,18 +1,5 @@
-import React from 'react';
-import { parse, stringify} from 'yaml';
-
-// Type definitions
-interface Integration {
-  name: string;
-  displayName: string;
-  provider: string;
-  read: { objects: any[] };
-  write: { objects: any[] };
-}
-
-interface ParsedConfig {
-  integrations: Integration[];
-}
+import { parse } from 'yaml';
+import { ParsedConfig } from '../../types';
 
 // Utility functions
 const yamlParser = {
